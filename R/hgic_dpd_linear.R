@@ -11,14 +11,7 @@ awDPDlasso.lm <- function(X,Y, init.mode=c("RLARS","DPD-lasso"), init.model=NULL
   if(is.matrix(X)=="FALSE" || is.matrix(Y)=="FALSE" ){
     stop(message="The data type of X and Y is only Matrix.")
   }
-  if(gam <0 || gam0 <0){
-    stop(message="Robust tuning parameters gam and gam0 are only positive.")
-  }
   
-  ini.cand <- as.integer(ini.cand)
-  if(ini.cand <2  ){
-    stop(message="The number of candidates of initial points is more than 2.")
-  }
   nlambda <- as.integer(nlambda)
   if(nlambda < 1 ){
     stop(message="The number of grids for sparse tuning parameter is more than 1.")
@@ -27,14 +20,6 @@ awDPDlasso.lm <- function(X,Y, init.mode=c("RLARS","DPD-lasso"), init.model=NULL
   if(lmin < 0 || lmax <0){
     stop(message="lmin and lmax are positive.")
   }
-  ncores <- as.integer(ncores)
-  if(ncores < 1){
-    stop(message="The number of cpu cores for parallel computing is more than 1.")
-  }
-  if( ini.subsamp <0 || ini.subsamp >1){
-    stop(message="The proportion of subsample is 0 < ini.subsamp < 1")
-  }
- 
   
   #########################################
   # choose a initial point
