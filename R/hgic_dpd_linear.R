@@ -2,10 +2,7 @@ awDPDlasso.lm <- function(X,Y, init.mode=c("RLARS","DPD-lasso"), init.model=NULL
                                penalty = "lasso", weight.mode = "lasso",
                                lambda.mode=c("lambda0","given"),
                                lmax=1,lmin=0.05, nlambda=50,
-                               seed = 1024,
-                               ncores=1, gam=0.1, gam0=0.5, intercept=T, alpha=1,
-                               ini.subsamp=0.2, ini.cand=1000,
-                               alpha.LTS=0.75, nlambda.LTS=40){
+                               seed = 1024, intercept=T, alpha=1){
   
   
   #########################################
